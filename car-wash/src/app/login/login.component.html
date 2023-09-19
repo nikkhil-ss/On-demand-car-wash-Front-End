@@ -1,0 +1,18 @@
+<div class="login-form">
+  <form (ngSubmit)="login()">
+    <h1>Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="email" placeholder="Email" id="email" name="email" autocomplete="nope" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" [(ngModel)]="user.email">
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password" id="password" name="password" autocomplete="new-password" [(ngModel)]="user.password">
+      </div>
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+      <a routerLink="/signup">Register</a>
+      <button type="submit">Sign in</button>
+    </div>
+  </form>
+</div>

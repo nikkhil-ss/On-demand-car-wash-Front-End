@@ -1,0 +1,12 @@
+<div style="overflow: auto; height: 600px;">
+<h3 style="margin-left:20px; margin-top: 20px;">WashPacks</h3>
+  <div class="card-container" *ngFor="let wp of WashPack;">
+    <div class="card">
+      <h2 class="label">{{wp.name}}</h2>
+      <p class="value">Price {{wp.cost}}</p>
+      <p class="value">{{wp.description}}</p>
+      </div>
+    </div>
+
+  </div>
+

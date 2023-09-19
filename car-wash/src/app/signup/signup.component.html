@@ -1,0 +1,26 @@
+<div class="signup-form">
+  <form (ngSubmit)="signup()">
+    <h1>Register here</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="text" placeholder="Name"  id="name" name="name" autocomplete="nope" required [(ngModel)]=user.name>
+      </div>
+      <div class="input-field">
+        <input type="text" placeholder="Contact Number"  id="contactNumber" name="contactNumber" autocomplete="nope" required [(ngModel)]=user.contactNumber>
+      </div>
+      <div class="input-field">
+        <input type="email" placeholder="Email" id="email" name="email" autocomplete="nope" required pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"  [(ngModel)]=user.email>
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password"  id="password" name="password" autocomplete="new-password" required [(ngModel)]=user.password>
+      </div>
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+      <a routerLink="/login" style="text-align: center;" >Login</a>
+      <button type="submit" style="text-align: center;" >Register</button>
+
+
+    </div>
+  </form>
+</div>

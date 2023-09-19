@@ -1,0 +1,91 @@
+@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  line-height: 2;
+  height: 100%;
+  background-color: #221;
+  text-transform: uppercase;
+}
+.main{
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.nav-container{
+  position: sticky;
+  top: 120px;
+  margin-left: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  width:23%;
+}
+#backButton{
+  height: 40px;
+  width:100%;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(41, 41, 101);
+  border-radius: 20px ;
+}
+#backButton:hover{
+  color: rgb(38, 61, 105);
+  background-color: rgb(92, 111, 157);
+}
+
+.outlet-container{
+
+  width: 77%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff090;
+}
+
+
+
+.arrow i {
+  display: none;
+}
+
+.arrow {
+  margin-top: 20px;
+  padding-left: 3px;
+  text-align: left;
+  position:relative;
+  border-radius: 10px;
+	display: block;
+  color: #2c3e70;
+  width:180px;
+
+  height: 40px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.arrow:hover i {
+  display: block;
+  position: absolute;
+  top: 0.50em;
+  left: -6em;
+}
+
+
+

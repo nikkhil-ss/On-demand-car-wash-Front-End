@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="title">
+      <h2>Hello User Get Your car Washed Now...</h2>
+  </div>
+<div class="d-flex">
+  <form (ngSubmit)="addOrder()" >
+    <label>
+      <span class="fname">Email <span class="required">*</span></span>
+      <input type="email" [(ngModel)]="order.useremailid" id="useremailid" name="useremailid">
+    </label>
+
+    <label>
+      <span>Phone Number</span>
+      <input type="text" name="phoneNo" id="phoneNo" [(ngModel)]="order.phoneNo">
+    </label>
+    <label>
+      <span>WashPack <span class="required">*</span></span>
+      <select name="washpack" id="washpack" [(ngModel)]="order.washpack">
+        <option value="Basix">Basix(Default)</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Platinum">Platinum</option>
+      </select>
+    </label>
+    <label>
+      <span>Do you want a PickUp-n-Delivery<span class="required">*</span></span>
+      <select name="pickUp" [(ngModel)]="order.pickUp">
+        <option value="false">Select...</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </label>
+    <label>
+      <span>Pick/Drop Location</span>
+      <input type="text" name="pickupAddress" id="pickupAddress" [(ngModel)]="order.pickupAddress">
+    </label>
+    <label>
+      <span>No of Cars to be washed</span>
+      <input type="number" name="carCount" [(ngModel)]="order.cars.carCount" min="1" max="3">
+    </label>
+    <button type="submit" >Place order</button>
+  </form>
+
+</div>
+

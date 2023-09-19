@@ -1,0 +1,49 @@
+html{
+  height: 100%;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(148, 169, 194);
+  height: 100vh;
+}
+
+#bookOrder{
+  margin-top:20px;
+  background-color: #a5b5c1;
+  border: 0;
+  width: 400px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 30px;
+  color: #39739d;
+  justify-self: flex-end;
+
+
+}
+#bookOrder:hover{
+background-color: #b3d3ea;
+  color: #2c5777;
+}
+img{
+  width: 600px;
+  height: 380px;
+}
+
+div.scroll-container {
+  background-color: #d6d5ca;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  width: 650px;
+  height:400px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}

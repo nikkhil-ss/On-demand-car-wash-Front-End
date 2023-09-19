@@ -1,0 +1,18 @@
+<div class="main">
+
+  <div class="nav-container" >
+    <button id="backButton" routerLink="/washer">Back</button>
+    <ul>
+      <a class="arrow" routerLink="/washer/pendingOrders">Get Pending Orders</a>
+      <a class="arrow" routerLink="/washer/completedOrders"><i class="fas fa-arrow-alt-right"></i>Get Completed Orders</a>
+      <a class="arrow" routerLink="/washer/washPacks"><i class="fas fa-arrow-alt-right"></i>See Washpacks</a>
+      <a class="arrow"><i class="fas fa-arrow-alt-right"></i>Ratings</a>
+      <a class="arrow"><i class="fas fa-arrow-alt-right"></i>Street Fighter</a>
+    </ul>
+  </div>
+  <div class="outlet-container" style="position: sticky; top: 100px;">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>
