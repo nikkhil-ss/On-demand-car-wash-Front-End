@@ -20,6 +20,14 @@ import { CancelledOrdersComponent } from './orders/cancelled-orders/cancelled-or
 
 import { UsersDashboardComponent } from './User/users-dashboard/users-dashboard.component';
 import { AddorderComponent } from './User/addorder/addorder.component';
+import { UserwashpacksComponent } from './User/userwashpacks/userwashpacks.component';
+import { UserordersComponent } from './User/userorders/userorders.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AllUsersComponent } from './admin/all-users/all-users.component';
+import { AddWasherComponent } from './admin/add-washer/add-washer.component';
+import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
+import { OrderstatusComponent } from './admin/orderstatus/orderstatus.component';
 
 
 @NgModule({
@@ -38,7 +46,15 @@ import { AddorderComponent } from './User/addorder/addorder.component';
     AllOrdersComponent,
     CancelledOrdersComponent,
     UsersDashboardComponent,
-    AddorderComponent
+    AddorderComponent,
+    UserwashpacksComponent,
+    UserordersComponent,
+    ForgotPasswordComponent,
+    AdminDashboardComponent,
+    AllUsersComponent,
+    AddWasherComponent,
+    ManageOrdersComponent,
+    OrderstatusComponent
   ],
   imports: [
     BrowserModule,

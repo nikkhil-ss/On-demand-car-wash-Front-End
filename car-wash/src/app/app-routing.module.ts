@@ -13,6 +13,14 @@ import { WashpacksComponent } from './washer/washpacks/washpacks.component';
 import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { UsersDashboardComponent } from './User/users-dashboard/users-dashboard.component';
 import { AddorderComponent } from './User/addorder/addorder.component';
+import { UserwashpacksComponent } from './User/userwashpacks/userwashpacks.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AddWasherComponent } from './admin/add-washer/add-washer.component';
+import { AllOrdersComponent } from './orders/all-orders/all-orders.component';
+import { AllUsersComponent } from './admin/all-users/all-users.component';
+import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
+import { OrderstatusComponent } from './admin/orderstatus/orderstatus.component';
 
 const routes: Routes = [
 
@@ -21,6 +29,7 @@ const routes: Routes = [
   {path:'signup',component: SignupComponent},
   { path: 'ratings', component: RatingsComponent },
   { path: 'about', component: AboutComponent },
+  //washer
   {path:'washer',component: WasherDashboardComponent,
     children:[
         {path:'pendingOrders', component:PendingOrdersComponent},
@@ -28,15 +37,31 @@ const routes: Routes = [
         {path:'washPacks',component:WashpacksComponent}
 
     ]
-
-
   },
+  {path:'forgotPassword',component:ForgotPasswordComponent},
+  //user
   {path:'user',component:UsersDashboardComponent,
   children:[
-    {path:'addOrder',component:AddorderComponent}
+    {path:'addOrder',component:AddorderComponent},
+    {path:'washPacks',component:UserwashpacksComponent},
+
   ]
 
 },
+{path:'admin',component:AdminDashboardComponent,
+children:[
+  {path:'addWasher',component: AddWasherComponent},
+  {path:'allOrders',component:ManageOrdersComponent},
+  {path:'orderStatus/:orderId',component:OrderstatusComponent},
+
+  {path:'allUsers',component:AllUsersComponent},
+
+]
+
+
+},
+
+
   { path: '', redirectTo: '/', pathMatch: 'full' }, // Default route
 ];
 

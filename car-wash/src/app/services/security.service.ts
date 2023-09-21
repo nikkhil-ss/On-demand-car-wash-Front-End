@@ -26,6 +26,10 @@ export class SecurityService {
   return token;
   }
 
+  forgotPassword(user:User):Observable<Object>{
+    return this.httpClient.post(url_8081+'/forgotPassword',user);
+  }
+
 
 
 }

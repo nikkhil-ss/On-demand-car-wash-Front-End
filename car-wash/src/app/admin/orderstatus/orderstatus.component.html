@@ -1,0 +1,46 @@
+<div class="container" style="border: 2px solid rgb(79, 79, 142); width: 600px; height: 650px;  margin-top:60px; box-shadow: 10px 5px 5px rgb(90, 117, 167); overflow: scroll;">
+  <h3 style="font-size: 40px; color: rgb(64, 64, 127); margin-top: 5px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Order Summary</h3>
+  <h3>--------------------------------------------------------------------------------------</h3>
+  <div style="display: flex;">
+    <h3>Order Id :</h3>
+    <h1>{{orderSummary.orderId}}</h1>
+    <h3 style="margin-left:10px;">Status :</h3><h1>{{orderSummary.status}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3> Email Id :</h3>
+    <h1>{{orderSummary.useremailid}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3> WashPack :</h3>
+    <h1>{{orderSummary.washpack}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3> Washer Assigned :</h3>
+    <h1>{{orderSummary.washerName}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3>Contace Number :</h3>
+    <h1>{{orderSummary.phoneNo}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3> Pickup-n-Delivery Status :</h3>
+    <h1>{{orderSummary.pickUp}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3>Address :</h3>
+    <h1>{{orderSummary.pickupAddress}}</h1>
+  </div>
+  <div style="display: flex;">
+    <h3> Number of Cars to be washed :</h3>
+    <h1>{{orderSummary.cars.carCount}}</h1>
+  </div>
+
+  <div class="buttons">
+    <button (click)="reload()">Reload Status</button>
+    <button (click)="confirmOrder()">Confirm Order</button>
+    <button (click)="completeOrder()">Complete Order</button>
+
+  </div>
+
+</div>
+

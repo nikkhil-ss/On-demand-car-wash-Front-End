@@ -1,0 +1,22 @@
+<div class="main">
+
+  <div class="nav-container" >
+    <button id="backButton" routerLink="/admin">Back</button>
+    <ul>
+      <a class="arrow" routerLink="/admin/allUsers"><i class="fas fa-arrow-alt-right"></i>Get All Users</a>
+      <a class="arrow" routerLink="/admin/allOrders"><i class="fas fa-arrow-alt-right"></i>Get All Orders</a>
+      <a class="arrow" routerLink="/admin/pendingOrders">Get Pending Orders</a>
+      <a class="arrow" routerLink="/admin/completedOrders"><i class="fas fa-arrow-alt-right"></i>Get Completed Orders</a>
+      <a class="arrow" routerLink="/admin/seeWashpacks"><i class="fas fa-arrow-alt-right"></i>See Washpacks</a>
+      <a class="arrow" routerLink="/admin/addWashpack"><i class="fas fa-arrow-alt-right"></i>Add WashPacks</a>
+      <a class="arrow"><i class="fas fa-arrow-alt-right"></i>Ratings</a>
+      <a class="arrow"><i class="fas fa-arrow-alt-right"></i>Street Fighter</a>
+      <a class="arrow" routerLink="/admin/addWasher"><i class="fas fa-arrow-alt-right"></i>Add Washer</a>
+    </ul>
+  </div>
+  <div class="outlet-container" style="position: fixed; top: 100px; left:25%">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>

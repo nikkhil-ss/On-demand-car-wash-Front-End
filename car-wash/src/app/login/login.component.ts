@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../models/user';
 import { SecurityService } from '../services/security.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { SecurityService } from '../services/security.service';
 })
 export class LoginComponent {
   user:User=new User();
-  constructor( private securityService:SecurityService){}
+  constructor( private securityService:SecurityService,private router:Router){}
 
   ngOnInit() { }
 
@@ -17,7 +18,9 @@ export class LoginComponent {
      console.log(this.user);
      this.securityService.login(this.user).subscribe(data=>{
       console.log(data);
-     },error=>console.log("try again",error));
+      this.router.navigate(['user'])
+
+     },error=>console.log(error));
 
   }
 }

@@ -15,5 +15,18 @@ export class OrderService {
   addOrder(order:OrderDetails):Observable<any>{
     return this.httpClient.post(url+'/add', order);
   }
+  getOrderList():Observable<OrderDetails[]>{
+    return this.httpClient.get<OrderDetails[]>(url+'/findall');
+  }
+
+  getOneOrder(orderId:any):Observable<OrderDetails[]>{
+      return this.httpClient.get<OrderDetails[]>(url+"/findone/"+orderId);
+  }
+  confirmOrder(orderId:any):Observable<any>{
+      return this.httpClient.put(url+"/updateStatus/confirmed/"+orderId,"");
+  }
+  completeOrder(orderId:any):Observable<any>{
+    return this.httpClient.put(url+"/updateStatus/completed/"+orderId,"");
+}
 
 }

@@ -1,0 +1,27 @@
+<div class="signup-form">
+  <form (ngSubmit)="addWasher()">
+    <h1>Add Washer Here</h1>
+    <div class="content">
+      <div class="input-field">
+        <input   id="role" name="role" required [(ngModel)]=user.role value="WASHER" placeholder="WASHER(ROLE)" disabled>
+      </div>
+      <div class="input-field">
+        <input type="text" placeholder="Washer Name"  id="name" name="name" autocomplete="nope" required [(ngModel)]=user.name>
+      </div>
+      <div class="input-field">
+        <input type="text" placeholder="Washer Contact Number"  id="contactNumber" name="contactNumber" autocomplete="nope" required [(ngModel)]=user.contactNumber>
+      </div>
+      <div class="input-field">
+        <input type="email" placeholder="Washer Email" id="email" name="email" autocomplete="nope" required pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"  [(ngModel)]=user.email>
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password"  id="password" name="password" autocomplete="new-password" required [(ngModel)]=user.password>
+      </div>
+    </div>
+    <div class="action">
+      <button type="submit" style="text-align: center;" >Click here to Add</button>
+
+
+    </div>
+  </form>
+</div>
