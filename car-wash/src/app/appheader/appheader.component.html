@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="heading">Splash Wash</div>
+  <div class="topnav">
+    <a  routerLink="">Home</a>
+    <a routerLink="ratings">Ratings</a>
+    <a routerLink="about">About</a>
+    <a *ngIf="securityService.roleMatch('USER')" routerLink="/user">User DashBoard</a>
+    <a *ngIf="securityService.roleMatch('ADMIN')" routerLink="/admin">Admin DashBoard</a>
+    <a *ngIf="securityService.roleMatch('WASHER')" routerLink="/washer">Washer</a>
+    <div >
+      <button *ngIf="! isLoggedIn()" routerLink="/login">Login</button>
+      <button *ngIf="! isLoggedIn()" routerLink="/signup">SignUp</button>
+      <button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>

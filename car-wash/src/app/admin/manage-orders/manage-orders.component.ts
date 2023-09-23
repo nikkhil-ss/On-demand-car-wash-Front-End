@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrderDetails } from 'src/app/models/order-details';
 import { OrderService } from 'src/app/services/order.service';
+import { SecurityService } from 'src/app/services/security.service';
 
 
 @Component({
@@ -12,9 +13,11 @@ import { OrderService } from 'src/app/services/order.service';
 export class ManageOrdersComponent implements OnInit{
   updatedStatus='';
   OrderList:Array<OrderDetails>=[];
-  constructor(private orderService:OrderService, private router:Router){}
+  constructor(private orderService:OrderService, private router:Router,
+    private securityService:SecurityService ){}
   ngOnInit(): void {
     this.getOrderList();
+    this.getAllWashers();
   }
 
   getOrderList(){
@@ -23,28 +26,36 @@ export class ManageOrdersComponent implements OnInit{
     })
   }
 
-  changeStatus(value:any){
-    console.log(value)
-    this.updatedStatus=value.target.value;
-    switch(this.updatedStatus) {
-       case "Confirmed": {
-          //do something
-          console.log("Confirmed")
+  // changeStatus(value:any){
+  //   console.log(value)
+  //   this.updatedStatus=value.target.value;
+  //   switch(this.updatedStatus) {
+  //      case "Confirmed": {
+  //         //do something
+  //         console.log("Confirmed")
 
-          break;
-       }
-       case "Completed": {
-          //do something
-          console.log("Completed")
-          break;
-       }
+  //         break;
+  //      }
+  //      case "Completed": {
+  //         //do something
+  //         console.log("Completed")
+  //         break;
+  //      }
 
-    }
-  }
+  //   }
+  // }
+
   onclick(orderId:any){
       console.log(orderId);
       this.router.navigate(['admin/orderStatus',orderId]);
 
+  }
+  
+  getAllWashers(){
+      this.securityService.getAllWasher().subscribe(data=>{
+          console.log("Washers list",data);
+
+      })
   }
 
 

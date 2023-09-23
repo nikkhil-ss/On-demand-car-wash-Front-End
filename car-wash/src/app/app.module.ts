@@ -9,7 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import  { HttpClientModule } from '@angular/common/http';
+import  { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { WasherDashboardComponent } from './washer/washer-dashboard/washer-dashboard.component';
 import { PendingOrdersComponent } from './washer/pending-orders/pending-orders.component';
 import { CompletedOrdersComponent } from './washer/completed-orders/completed-orders.component';
@@ -28,6 +28,10 @@ import { AllUsersComponent } from './admin/all-users/all-users.component';
 import { AddWasherComponent } from './admin/add-washer/add-washer.component';
 import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
 import { OrderstatusComponent } from './admin/orderstatus/orderstatus.component';
+import { AppheaderComponent } from './appheader/appheader.component';
+
+import { AuthInterceptor } from './authguard/auth.interceptor';
+import { SecurityService } from './services/security.service';
 
 
 @NgModule({
@@ -54,7 +58,9 @@ import { OrderstatusComponent } from './admin/orderstatus/orderstatus.component'
     AllUsersComponent,
     AddWasherComponent,
     ManageOrdersComponent,
-    OrderstatusComponent
+    OrderstatusComponent,
+    AppheaderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,15 @@ import { OrderstatusComponent } from './admin/orderstatus/orderstatus.component'
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    //  AuthGuard,
+    //  {
+    //     provide:HTTP_INTERCEPTORS,
+    //     useClass:AuthInterceptor,
+    //     multi: true
+    //  },
+    //  SecurityService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

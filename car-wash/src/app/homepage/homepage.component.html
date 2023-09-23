@@ -8,5 +8,6 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTMUJf4wBvcux7FU67dK5y3hCGP0Uy-zOGZJe-Ex5nRPWOOkL910PJg3jpe4Q1Ufa2Enc&usqp=CAU" alt="Northern Lights">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAVqnTVINLUTVkkKysjKXUPS3GNbaPmYjMgQ&usqp=CAU" alt="Mountains">
     </div>
-  <button id="bookOrder" routerLink="/user/addOrder">Get Your Car Washed Now..</button>
+  <button *ngIf="!userauth.isLoggedIn()" id="bookOrder" routerLink="/login">Get Your Car Washed Now..</button>
+  <button *ngIf=" userauth.isLoggedIn()"  id="bookOrder" routerLink="/user/addOrder">Get Your Car Washed Now..</button>
 </div>

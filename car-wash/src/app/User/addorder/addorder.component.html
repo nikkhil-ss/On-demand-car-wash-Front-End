@@ -15,10 +15,9 @@
     </label>
     <label>
       <span>WashPack <span class="required">*</span></span>
-      <select name="washpack" id="washpack" [(ngModel)]="order.washpack">
-        <option value="Basix">Basix(Default)</option>
-        <option value="Deluxe">Deluxe</option>
-        <option value="Platinum">Platinum</option>
+      <select name="washpack" id="washpack"  [(ngModel)]="order.washpack">
+        <option value="{{washpack.name}}" *ngFor="let washpack of washPacks">{{washpack.name}}</option>
+
       </select>
     </label>
     <label>

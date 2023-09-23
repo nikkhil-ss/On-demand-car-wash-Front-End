@@ -1,0 +1,56 @@
+html,body { width: 100%; height: 100%; }
+.header{
+  background-color: #2d3b55;
+  width: 100%;
+  position: sticky;
+  top:0px;
+
+
+}
+
+.heading{
+  display: flex;
+  background-color: #2d3b55;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #7a889c;
+  overflow: hidden;
+
+}
+
+button{
+  background-color: #7a889c;
+
+}
+/* Style the links inside the navigation bar */
+.topnav a,button {
+  float: left;
+  color: #2d3b55;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border: 0px;
+}
+
+
+/* Change the color of links on hover */
+.topnav a:hover,button:hover {
+  background-color: #2d3b55;
+  color: rgb(255, 255, 255);
+}
+
+
+
+.main-container{
+  width: 100%;
+  height: 100vh;
+}
+
