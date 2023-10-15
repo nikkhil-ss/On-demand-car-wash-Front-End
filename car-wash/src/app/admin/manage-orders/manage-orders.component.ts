@@ -13,6 +13,7 @@ import { SecurityService } from 'src/app/services/security.service';
 export class ManageOrdersComponent implements OnInit{
   updatedStatus='';
   OrderList:Array<OrderDetails>=[];
+  WasherList:Array<String>=[];
   constructor(private orderService:OrderService, private router:Router,
     private securityService:SecurityService ){}
   ngOnInit(): void {
@@ -53,7 +54,8 @@ export class ManageOrdersComponent implements OnInit{
   
   getAllWashers(){
       this.securityService.getAllWasher().subscribe(data=>{
-          console.log("Washers list",data);
+        this.WasherList=data;
+          console.log("Washers list",this.WasherList);
 
       })
   }

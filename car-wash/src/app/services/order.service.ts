@@ -29,4 +29,8 @@ export class OrderService {
     return this.httpClient.put(url+"/updateStatus/completed/"+orderId,"");
 }
 
+assignWasher(assignWasher:OrderDetails):Observable<any>{
+ return this.httpClient.put(url+"/assignWasher",assignWasher);
+}
+
 }

@@ -1,4 +1,4 @@
-<div class="signup-form">
+<!-- <div class="signup-form">
   <form (ngSubmit)="signup()">
     <h1>Register here</h1>
     <div class="content">
@@ -21,6 +21,74 @@
       <button type="submit" style="text-align: center;" >Register</button>
 
 
+    </div>
+  </form>
+</div> -->
+
+
+<div class="signup-form">
+  <form (ngSubmit)="signup()" #myForm="ngForm">
+    <h1>Register here</h1>
+    <div class="content">
+      <div class="input-field">
+        <input
+          type="text"
+          placeholder="Name"
+          id="name"
+          name="name"
+          autocomplete="nope"
+          required
+          [(ngModel)]="user.name"
+          #nameInput="ngModel"
+        >
+        <span *ngIf="nameInput.invalid && nameInput.dirty" class="error-message">Name is required.</span>
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          placeholder="Contact Number"
+          id="contactNumber"
+          name="contactNumber"
+          autocomplete="nope"
+          required
+          [(ngModel)]="user.contactNumber"
+          #contactNumberInput="ngModel"
+        >
+        <span *ngIf="contactNumberInput.invalid && contactNumberInput.dirty" class="error-message">Contact Number is required.</span>
+      </div>
+      <div class="input-field">
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          name="email"
+          autocomplete="nope"
+          required
+          pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+          [(ngModel)]="user.email"
+          #emailInput="ngModel"
+        >
+        <span *ngIf="emailInput.invalid && emailInput.dirty" class="error-message">Please enter a valid email.</span>
+      </div>
+      <div class="input-field">
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          name="password"
+          autocomplete="new-password"
+          required
+          [(ngModel)]="user.password"
+          #passwordInput="ngModel"
+        >
+        <span *ngIf="passwordInput.invalid && passwordInput.dirty" class="error-message">Password is required.</span>
+      </div>
+    
+    </div>
+    <div class="error-message" *ngIf="myForm.invalid" style="text-align: center;">Please fill out all required fields and correct any errors.</div>
+    <div class="action">
+      <a routerLink="/login" style="text-align: center;">Login</a>
+      <button type="submit" [disabled]="myForm.invalid" style="text-align: center;">Register</button>
     </div>
   </form>
 </div>

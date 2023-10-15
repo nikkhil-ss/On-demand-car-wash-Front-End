@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { OrderDetails } from 'src/app/models/order-details';
 import { OrderService } from 'src/app/services/order.service';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-orderstatus',
@@ -10,7 +12,9 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderstatusComponent implements OnInit{
   public  orderSummary:any;
   public orderId:any
-  constructor(private route:ActivatedRoute, private router:Router,private orderService:OrderService){}
+  washerList:any;
+  assignWasherDetails:OrderDetails=new OrderDetails();
+  constructor(private route:ActivatedRoute, private router:Router,private orderService:OrderService,private securityService:SecurityService){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params:ParamMap)=>{
@@ -19,6 +23,7 @@ export class OrderstatusComponent implements OnInit{
       console.log("hello orderi id",this.orderId);
     });
     this.getOneOrder();
+    this.getAllWashers();
   }
 
   getOneOrder(){
@@ -39,6 +44,33 @@ export class OrderstatusComponent implements OnInit{
     this.orderService.completeOrder(this.orderId).subscribe(data=>{
       alert(data.status);
     },error=>(alert(error.error.text)));
+}
+checkWasher(){
+  if(this.orderSummary.washerName==="NA"){
+    return true;
+  }
+
+  return false;
+}
+
+getAllWashers(){
+  this.securityService.getAllWasher().subscribe(data=>{
+    this.washerList=data;
+      console.log("Washers list order status",this.washerList);
+
+  })
+}
+
+washerAssign(event:any){
+  console.log(event.target.value);
+  this.assignWasherDetails.washerName=event.target.value;
+  this.assignWasherDetails.orderId=this.orderSummary.orderId;
+  console.log(event,"--",this.orderSummary.orderId);
+  this.orderService.assignWasher(this.assignWasherDetails).subscribe(data=>{
+    alert("Washer Assigned Successfully");
+  },error=>{
+    console.log(error);
+  })
 }
 
  reload(){

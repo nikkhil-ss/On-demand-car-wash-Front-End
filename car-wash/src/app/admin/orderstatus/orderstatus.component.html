@@ -16,7 +16,13 @@
   </div>
   <div style="display: flex;">
     <h3> Washer Assigned :</h3>
-    <h1>{{orderSummary.washerName}}</h1>
+    <h1 *ngIf="!checkWasher()">{{orderSummary.washerName}}</h1>
+    <h1 *ngIf="checkWasher()">
+      <select name="washerName" id="washerName" [(ngModel)]="orderSummary.washerName" (change)="washerAssign($event)">
+       <option value="NA">--Assign Washer--</option>
+        <option value="{{washer.name}}" *ngFor="let washer of washerList">{{washer.name}}</option>
+      </select>
+    </h1>
   </div>
   <div style="display: flex;">
     <h3>Contace Number :</h3>

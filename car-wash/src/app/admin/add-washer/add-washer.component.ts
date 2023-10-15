@@ -8,6 +8,7 @@ import { SecurityService } from 'src/app/services/security.service';
   styleUrls: ['./add-washer.component.css']
 })
 export class AddWasherComponent {
+
 user:User=new User();
 
 constructor(private securityService:SecurityService) {
@@ -18,6 +19,7 @@ addWasher(){
     console.log(this.user);
   this.securityService.signup(this.user).subscribe(data=>{
     alert("Added Successfully");
+    window.location.reload();
   },error=>console.log(error.error.text));
 }
 

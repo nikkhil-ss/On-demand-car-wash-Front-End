@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
@@ -23,18 +23,53 @@ export class SecurityService {
 
   login(user: User):Observable<any> {
     console.log("inside login")
-  token=this.httpClient.post(url_8081+"/login",user);
+  token=this.httpClient.post<any>(url_8081+"/login",user);
   return token;
   }
 
   forgotPassword(user:User):Observable<Object>{
     return this.httpClient.post(url_8081+'/forgotPassword',user);
   }
+  getAllUsers():Observable<User[]>{
+    const auth_token=this.userAuthService.getToken();
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+    })
+    return this.httpClient.get<User[]>(url_8081+"/getAllUsers",{ headers: header })
+ 
+  }
+
+  changePassword(data:any):Observable<any>{
+    // const values=JSON.stringify(data);
+    console.log("in side change password",data);
+    const auth_token=this.userAuthService.getToken();
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+    })
+    return this.httpClient.post(url_8081+"/changePassword",data,{ headers: header })
+ 
+  }
+
+  getWasherList():Observable<User[]>{
+    const auth_token=this.userAuthService.getToken();
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+    })
+    return this.httpClient.get<any>(url_8081+"/getAllWashers",{ headers: header })
+  }
 
 
 
   getAllWasher():Observable<any>{
-    return this.httpClient.get<any>(url_8081+"/getAllWashers")
+    const auth_token=this.userAuthService.getToken();
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+    })
+    return this.httpClient.get<any>(url_8081+"/getAllWashers",{ headers: header })
   }
 
   public roleMatch(allowedRoles:String){

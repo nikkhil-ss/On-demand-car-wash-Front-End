@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { api } from 'src/assets/url/api';
 import { SecurityService } from '../services/security.service';
+import { Router } from '@angular/router';
 
 
 const url=`${api.URL_SECURITY}`;
@@ -15,7 +16,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   user:User=new User();
 
-  constructor(private http:HttpClient,private securityService:SecurityService){}
+  constructor(private http:HttpClient,private securityService:SecurityService,private router:Router){}
 
   ngOnInit(): void {
 
@@ -24,7 +25,11 @@ export class ForgotPasswordComponent implements OnInit {
   forgotPassword(){
     this.securityService.forgotPassword(this.user).subscribe(data=>{
       console.log(data);
-    },error=>alert(error.error.text));
+
+    },error=>{
+      alert(error.error.text)
+      this.router.navigate(['login']);
+    });
 
   }
 

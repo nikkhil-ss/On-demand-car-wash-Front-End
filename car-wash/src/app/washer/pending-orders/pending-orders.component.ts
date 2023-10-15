@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrderDetails } from 'src/app/models/order-details';
 import { WasherService } from 'src/app/services/washer.service';
 
@@ -13,7 +14,7 @@ import { WasherService } from 'src/app/services/washer.service';
 })
 export class PendingOrdersComponent implements OnInit {
 OrderList: Array<OrderDetails>=[]
-constructor(private washerService:WasherService){}
+constructor(private washerService:WasherService,private router:Router){}
   ngOnInit(): void {
     this.getPendingList();
   }
@@ -24,6 +25,11 @@ constructor(private washerService:WasherService){}
       console.log(data);
     })
   }
+  onclick(orderId:any){
+    console.log(orderId);
+    this.router.navigate(['admin/orderStatus',orderId]);
+
+}
 
 
 }

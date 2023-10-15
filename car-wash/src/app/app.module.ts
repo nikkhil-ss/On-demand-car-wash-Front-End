@@ -32,6 +32,11 @@ import { AppheaderComponent } from './appheader/appheader.component';
 
 import { AuthInterceptor } from './authguard/auth.interceptor';
 import { SecurityService } from './services/security.service';
+import { AllWashersComponent } from './admin/all-washers/all-washers.component';
+import { AddwashpackComponent } from './admin/addwashpack/addwashpack.component';
+import { ManageWashpacksComponent } from './admin/manage-washpacks/manage-washpacks.component';
+import { ProfileComponent } from './User/profile/profile.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -60,6 +65,12 @@ import { SecurityService } from './services/security.service';
     ManageOrdersComponent,
     OrderstatusComponent,
     AppheaderComponent,
+    AllWashersComponent,
+    AddwashpackComponent,
+    ManageWashpacksComponent,
+    ProfileComponent,
+    ChangePasswordComponent,
+    
 
   ],
   imports: [

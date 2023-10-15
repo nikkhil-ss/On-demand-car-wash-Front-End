@@ -14,12 +14,12 @@
           <thead>
             <tr>
               <th scope="col">OrderId</th>
-              <th scope="col">Customer Email</th>
+              
               <th scope="col">Contact</th>
               <th scope="col">PickUp Status</th>
               <th scope="col">Address </th>
               <th scope="col">Washer Name</th>
-              <th scope="col">Washpack</th>
+             
               <th scope="col">Status</th>
               <th scope="col">Car Count</th>
             </tr>
@@ -27,14 +27,15 @@
           <tbody>
             <tr *ngFor="let order of OrderList; let i=index;">
               <td>{{order.orderId}}</td>
-              <td>{{ order.useremailid }}</td>
+              
               <td>{{ order.phoneNo }}</td>
               <td>{{ order.pickUp }}</td>
               <td>{{ order.pickupAddress }}</td>
               <td>{{ order.washerName }}</td>
-              <td>{{ order.washpack }}</td>
+             
               <td>{{ order.status }}</td>
               <td>{{ order.cars.carCount }}</td>
+              <button>Get Receipt</button>
             </tr>
           </tbody>
         </table>

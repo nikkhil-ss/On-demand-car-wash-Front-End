@@ -1,11 +1,12 @@
 
+
 <div class="container" style="top: 20px; left: 10px; width: 1200px; overflow: scroll;" >
     <div class="pt-5" >
       <div class="card">
         <div class="card-header">
           <div class="row">
             <div class="col-6">
-              <h3>All Users</h3>
+              <h3>Washer List</h3>
             </div>
           </div>
         </div>
@@ -13,23 +14,24 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Contact</th>
+                <th scope="col">Washer Id</th>
+                <th scope="col">Washer Name</th>
+                <th scope="col">Washer Email</th>
+                <th scope="col">Washer Contact</th>
                 
-                <th scope="col">Account Status</th>
+                <th scope="col">Washer Account Status</th>
               </tr>
             </thead>
   
             <tbody>
-              <tr *ngFor="let order of UserList; let i=index;" style="cursor: pointer;"  >
+              <tr *ngFor="let order of WasherList; let i=index;" style="cursor: pointer;"  >
                 <td>{{ order.id }}</td>
                 <td>{{order.name}}</td>
                 <td>{{ order.email }}</td>
                 <td>{{order.contactNumber}}</td>
                 
                 <td>{{ order.status }}</td>
+                <button>Disable</button>
               </tr>
             </tbody>
   

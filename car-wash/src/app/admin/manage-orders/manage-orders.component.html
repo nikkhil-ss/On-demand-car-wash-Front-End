@@ -26,9 +26,7 @@
             <tr *ngFor="let order of OrderList; let i=index;" class="clickable" style="cursor: pointer;" (click)="onclick(order.orderId)" >
               <td>{{order.orderId}}</td>
               <td>{{ order.useremailid }}</td>
-              <td><select>
-                <!-- <option *ngFor=""></option> -->
-              </select></td>
+              <td>{{order.washerName}}</td>
               <td>{{ order.washpack }}</td>
               <td>{{ order.status }}</td>
               <td>{{ order.cars.carCount }}</td>

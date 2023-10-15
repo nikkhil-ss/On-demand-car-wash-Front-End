@@ -39,7 +39,7 @@ export class LoginComponent {
         this.router.navigate(['washer']);
       }
 
-     },error=>console.log(error));
+     },error=>{alert("Bad Credentials")});
 
   }
 
