@@ -1,11 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { api } from 'src/assets/url/api';
 import { OrderDetails } from '../models/order-details';
 import { Observable } from 'rxjs';
 import { WashPacks } from '../models/wash-packs';
 import { UserauthService } from './userauth.service';
+import { OrderReceipt } from '../models/order-receipt';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 const url=`${api.URL_USER}`;
 @Injectable({
   providedIn: 'root'
@@ -37,8 +42,15 @@ export class UserService {
     return this.http.put("http://localhost:8085/users/cancelOrder",data)
   }
 
-  getReceipt(dataId:any){
-    return this.http.get(url+"/getReceipt/"+dataId);
+  getReceipt(dataId:any):Observable<OrderReceipt>{
+    return this.http.get<OrderReceipt>(url+"/getReceipt/"+dataId);
   }
+
+  createTransaction(amount: any): Observable<any>{
+    return this.http.get<any>("http://localhost:8087/pay/createTransaction/" + amount);
+  }
+ 
+
+
 
 }

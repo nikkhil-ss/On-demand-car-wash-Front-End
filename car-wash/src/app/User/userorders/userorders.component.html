@@ -30,7 +30,7 @@
                 <td>{{ order.status }}</td>
                 <td>{{ order.cars.carCount }}</td>
                 <button (click)="getReceipt(order.orderId)" >Get Receipt</button>
-                <button >PayNow</button>
+                <button (click)="paynow(order)" >PayNow</button>
                 <td class="clickable" style="cursor: pointer;" (click)="cancelOrder(order.orderId)" >Cancel</td>
               </tr>
             </tbody>
